@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 溝通小卡列印 (A4 緊湊版)</title>
+    <style>
+        /* A4 緊湊佈局設定 */
+        @page { size: A4; margin: 0; }
+        body { 
+            margin: 0; 
+            padding: 5mm 10mm; /* 僅保留左右邊距，上方縮小到 5mm */
+            background: #fff; 
+            font-family: Arial, sans-serif; 
+        }
+        
+        .page {
+            width: 190mm;
+            display: grid;
+            grid-template-columns: repeat(2, 90mm);
+            grid-auto-rows: 54mm;
+            gap: 2mm; /* 縮小間隙 */
+            justify-content: center;
+        }
+
+        .card {
+            width: 90mm;
+            height: 54mm;
+            border: 0.5pt solid #bbb;
+            padding: 3mm;
+            box-sizing: border-box;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            font-size: 9pt; font-weight: bold; border-bottom: 1pt solid #333; padding-bottom: 1mm;
+            display: flex; justify-content: space-between;
+        }
+
+        .prompt-text {
+            font-size: 9.5pt; line-height: 1.25; color: #111; font-weight: 500; margin: 1mm 0;
+            background: #f4f4f4; padding: 2mm; border-radius: 1mm;
+        }
+
+        .input-method { font-size: 7.5pt; color: #555; font-weight: bold; }
+        .fill-in { color: #d00; text-decoration: underline; font-weight: bold; }
+        .zh-ref { font-size: 7.5pt; color: #888; border-top: 0.5pt dotted #ddd; padding-top: 1mm; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="card">
+        <div class="header"><span>1. Báo cáo dữ liệu</span><span>數據回報</span></div>
+        <div class="prompt-text">"Xin giúp tổng hợp dữ liệu. Kế hoạch là <span class="fill-in">___</span>, thực tế <span class="fill-in">___</span>, hàng lỗi <span class="fill-in">___</span>. Hãy tính tỷ lệ và báo cáo."</div>
+        <div class="input-method">🎤 說或 ⌨️ 寫 (填入當天數字)</div>
+        <div class="zh-ref">用途：AI 會自動計算生產達成率與不良率</div>
+    </div>
+
+    <div class="card">
+        <div class="header"><span>2. Phân tích hàng lỗi</span><span>不良分析</span></div>
+        <div class="prompt-text">"Hãy xem ảnh này. Đây là lỗi gì? Nếu tổng sản xuất <span class="fill-in">___</span> cái, lỗi <span class="fill-in">___</span> cái, thì tỷ lệ là bao nhiêu %?"</div>
+        <div class="input-method">📸 拍照 + 🎤/⌨️ (先傳圖再指令)</div>
+        <div class="zh-ref">用途：請 AI 描述不良現象並分析原因</div>
+    </div>
+
+    <div class="card">
+        <div class="header"><span>3. Dịch tài liệu</span><span>文件翻譯</span></div>
+        <div class="prompt-text">"Tôi không hiểu tài liệu tiếng Trung này. Hãy dịch sang tiếng Việt và giải thích từng cột có ý nghĩa gì."</div>
+        <div class="input-method">📸 截圖/拍照 + 🎤/⌨️</div>
+        <div class="zh-ref">用途：辨識並翻譯中文報表/Excel 欄位</div>
+    </div>
+
+    <div class="card">
+        <div class="header"><span>1. Báo cáo dữ liệu</span><span>數據回報</span></div>
+        <div class="prompt-text">"Xin giúp tổng hợp dữ liệu. Kế hoạch là <span class="fill-in">___</span>, thực tế <span class="fill-in">___</span>, hàng lỗi <span class="fill-in">___</span>. Hãy tính tỷ lệ."</div>
+        <div class="input-method">🎤 說或 ⌨️ 寫</div>
+        <div class="zh-ref">用途：AI 會自動計算生產達成率與不良率</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>2. Phân tích hàng lỗi</span><span>不良分析</span></div>
+        <div class="prompt-text">"Hãy xem ảnh này. Đây là lỗi gì? Nếu tổng sản xuất <span class="fill-in">___</span> cái, lỗi <span class="fill-in">___</span> cái, thì tỷ lệ là bao nhiêu %?"</div>
+        <div class="input-method">📸 拍照 + 🎤/⌨️</div>
+        <div class="zh-ref">用途：請 AI 描述不良現象並分析原因</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>3. Dịch tài liệu</span><span>文件翻譯</span></div>
+        <div class="prompt-text">"Tôi không hiểu tài liệu này. Hãy dịch sang tiếng Việt và giải thích từng cột có ý nghĩa gì."</div>
+        <div class="input-method">📸 截圖/拍照 + 🎤/⌨️</div>
+        <div class="zh-ref">用途：辨識並翻譯中文報表/Excel 欄位</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>1. Báo cáo dữ liệu</span><span>數據回報</span></div>
+        <div class="prompt-text">"Xin giúp tổng hợp dữ liệu. Kế hoạch là <span class="fill-in">___</span>, thực tế <span class="fill-in">___</span>, hàng lỗi <span class="fill-in">___</span>. Hãy tính tỷ lệ."</div>
+        <div class="input-method">🎤 說或 ⌨️ 寫</div>
+        <div class="zh-ref">用途：AI 會自動計算生產達成率與不良率</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>2. Phân tích hàng lỗi</span><span>不良分析</span></div>
+        <div class="prompt-text">"Hãy xem ảnh này. Đây là lỗi gì? Nếu tổng sản xuất <span class="fill-in">___</span> cái, lỗi <span class="fill-in">___</span> cái, thì tỷ lệ là bao nhiêu %?"</div>
+        <div class="input-method">📸 拍照 + 🎤/⌨️</div>
+        <div class="zh-ref">用途：請 AI 描述不良現象並分析原因</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>3. Dịch tài liệu</span><span>文件翻譯</span></div>
+        <div class="prompt-text">"Tôi không hiểu tài liệu này. Hãy dịch sang tiếng Việt và giải thích từng cột có ý nghĩa gì."</div>
+        <div class="input-method">📸 截圖/拍照 + 🎤/⌨️</div>
+        <div class="zh-ref">用途：辨識並翻譯中文報表/Excel 欄位</div>
+    </div>
+    <div class="card">
+        <div class="header"><span>1. Báo cáo dữ liệu</span><span>數據回報</span></div>
+        <div class="prompt-text">"Xin giúp tổng hợp dữ liệu. Kế hoạch là <span class="fill-in">___</span>, thực tế <span class="fill-in">___</span>, hàng lỗi <span class="fill-in">___</span>. Hãy tính tỷ lệ."</div>
+        <div class="input-method">🎤 說或 ⌨️ 寫</div>
+        <div class="zh-ref">用途：AI 會自動計算生產達成率與不良率</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+這套簡報與小卡已完全針對您的需求優化。簡報第 4 頁現在清楚說明了下載 App 與「手機拍、電腦看」的互通優勢；小卡也保證能在一頁 A4 內整齊列印。祝您培訓成功！
