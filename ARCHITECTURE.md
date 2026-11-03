@@ -93,7 +93,7 @@ flowchart LR
     F -->|檔案存在| G[在新畫面開啟 ViewFileActivity 檢視筆記]
     F -->|檔案不存在| H[彈出提示找不到筆記]
 ```
-
+test
 ---
 
 ## 📊 4. 模組功能與語系分佈範例 (Diagram Feature Showcase)
@@ -115,3 +115,5 @@ pie title 系統核心模組職責分佈
 
 - **測試指南**：請參閱 [`TESTING.md`](TESTING.md) 了解單元測試與自動化測試套件。
 - **功能規範**：請參閱 `openspec/specs/` 了解各項功能變更與歷史規格。
+
+test
